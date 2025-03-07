@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(spot_bringup)
 
 find_package(ament_cmake REQUIRED)
-find_package(spot_description REQUIRED)
+find_package(spot_gazebo_description REQUIRED)
 find_package(spot_gazebo REQUIRED)
 
 # Install project launch files

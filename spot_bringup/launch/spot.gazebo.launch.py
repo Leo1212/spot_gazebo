@@ -59,8 +59,8 @@ def generate_launch_description():
     )
 
     # Takes the description and joint angles as inputs and publishes the 3D poses of the robot links
-    pkg_spot_description = get_package_share_directory('spot_description')
-    sdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.sdf')
+    pkg_spot_gazebo_description = get_package_share_directory('spot_gazebo_description')
+    sdf_file = os.path.join(pkg_spot_gazebo_description, 'models', 'spot', 'model.sdf')
     with open(sdf_file, 'r') as infp: robot_desc = infp.read()
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -88,7 +88,7 @@ def generate_launch_description():
     gait_config = PathJoinSubstitution([config_path, 'config', 'gait', 'gait.yaml'])
     gait_param = ParameterFile(param_file=gait_config, allow_substs=True) 
 
-    urdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.urdf')
+    urdf_file = os.path.join(pkg_spot_gazebo_description, 'models', 'spot', 'model.urdf')
 
     quadruped_controller_node = Node(
         package="champ_base",

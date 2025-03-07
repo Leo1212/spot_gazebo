@@ -414,7 +414,7 @@
     <model name="spot">
       <pose>40.0 0.0 0.7 0.0 0.0 1.5</pose>
       <include merge="true">
-        <uri>package://spot_description/models/spot</uri>
+        <uri>package://spot_gazebo_description/models/spot</uri>
       </include>
     </model>
 

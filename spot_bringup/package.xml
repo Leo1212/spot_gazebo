@@ -10,7 +10,7 @@
 
   <depend>ros_gz</depend>
   <depend>spot_gazebo</depend>
-  <depend>spot_description</depend>
+  <depend>spot_gazebo_description</depend>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
