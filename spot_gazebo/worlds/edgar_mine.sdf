@@ -1,0 +1,321 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="edgar_mine">
+
+    <plugin
+        filename="ignition-gazebo-physics-system"
+        name="ignition::gazebo::systems::Physics">
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-sensors-system"
+        name="ignition::gazebo::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-scene-broadcaster-system"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-user-commands-system"
+        name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+
+    <physics name="1ms" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>0</real_time_factor>
+    </physics>
+
+    <scene>
+      <!-- modified (shadows) to reduce computation effort, default : true -->
+      <shadows>false</shadows>
+    </scene>
+
+    <atmosphere type="adiabatic">
+       <temperature>288</temperature>
+       <temperature_gradient>0.2</temperature_gradient>
+    </atmosphere>
+
+    <model name="Edgar_Mine_Virtual_STIX">
+      <pose>-0.40 118 0 1.5707 0 -0.35</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="starting_area_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_StartingArea.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="starting_area_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_StartingArea.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_01_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_01.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_01_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_01.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_02_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_02.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_02_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_02.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_03_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_03.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_03_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_03.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_04_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_04.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_04_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_04.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_05_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_05.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_05_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_05.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_06_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_06.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_06_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_06.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_07_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_07.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_07_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_07.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_08_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_08.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_08_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_08.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_09_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_09.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_09_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_09.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+
+        <collision name="section_10_collision">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_10.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="section_10_visual">
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX/tip/files/meshes/Edgar_Section_10.DAE</uri>
+              <scale>2 2 2</scale>
+            </mesh>
+          </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
+        </visual>
+      </link>
+    </model>
+
+    <include>
+      <pose>3.40 15.40 0.69 0 0 -0.07</pose>
+      <name>rescue_randy_1</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+    </include>
+
+    <include>
+      <pose>30.36 13.79 0.92 0 0 -1.55</pose>
+      <name>rescue_randy_2</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+    </include>
+
+    <include>
+      <pose>22.34 12.88 0.86 -0.16 0 -2.95</pose>
+      <name>rescue_randy_sitting_1</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
+    </include>
+
+    <include>
+      <pose>28.25 6.32 0.64 -0.15 0.06 -2.55</pose>
+      <name>rescue_randy_sitting_2</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
+    </include>
+
+    <model name="spot">
+      <pose>0.87 9.99 0.95 -0.05 -0.05 0.71</pose>
+      <include merge="true">
+        <uri>package://spot_gazebo_description/models/spot</uri>
+      </include>
+    </model>
+
+  </world>
+</sdf>
