@@ -72,7 +72,7 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     ```
 4. Launch the simulation
     ```bash
-    ros2 launch spot2_bringup spot.gazebo.launch.py
+    ros2 launch spot_bringup spot.gazebo.launch.py
     ```
 
 ## Tasks Demonstration
@@ -87,9 +87,35 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     <img src="assets/trajectory_comparison.png" width="400">
 </div>
 
-### Object detection
+### Object Detection, Segmentation and Pose Estimation
+<div style="display: flex; gap: 10px;">
+    <img src="assets/yolo_thermal_1.png" height="200" width="200">
+    <img src="assets/yolo_thermal_3.png" height="200" width="200">
+    <img src="assets/yolo_thermal_2.png" height="200" width="200">
+</div>
 
 ### Navigation
+1. Start the gazebo siimulation
+```
+ros2 launch spot_bringup spot.gazebo.launch.py rviz:=false
+```
+
+2. Use `SLAM` to build a map
+```
+ros2 launch spot_navigation online_async_launch.py
+```
+
+3. Once the map is built and saved
+```
+ros2 launch spot_navigation localization_launch.py map:=simple_tunnel.yaml use_sim_time:=true rviz:=true
+```
+NOTE currently the quality of AMCL is really bad so better find something better to use
+
+## TODO
+1. Integrate a better controller like
+    * https://github.com/ShuoYangRobotics/A1-QP-MPC-Controller
+    * https://github.com/dfki-ric-underactuated-lab/dfki-quad
+    * https://github.com/bostoncleek/quadruped_control
 
 
 ## Acknowledgement
